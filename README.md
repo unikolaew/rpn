@@ -5,6 +5,18 @@
 ## Запуск проекта
 Убедитесь, что у вас установлены Go и все необходимые компоненты.
 
+Скопируйте репозиторий на свой компьютер с помощью команды:
+
+```
+git clone https://github.com/unikolaew/rpn
+```
+
+Перейдите в каталог проекта:
+
+```
+cd rpn
+```
+
 Для запуска проекта выполните следующую команду:
 
 ```
@@ -19,11 +31,11 @@ go run cmd/main.go
 
 Арифметическое выражение содержит только цифры 0-9, +, -, *, /, (, ). Скобки всегда должны быть попарно закрыты, пробелы не допускаются. Результат является строковым выражением числа с плавающей точкой.
 
-## Примеры запросов: 
+## Примеры запросов (Bash): 
 
 **1. Успешное вычисление (HTTP 200)**:
 
-```
+```bash
 curl --location 'localhost:8080/api/v1/calculate' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -37,7 +49,7 @@ curl --location 'localhost:8080/api/v1/calculate' \
 
 **2. Входные данные несоответствуют требованиям (HTTP 422):**
 
-```
+```bash
 curl --location 'localhost:8080/api/v1/calculate' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -51,7 +63,7 @@ curl --location 'localhost:8080/api/v1/calculate' \
 
 **3. Что-то пошло не так (HTTP 500)**:
 
-```
+```bash
 curl --location 'localhost:8080/api/v1/calculate' \
 --header 'Content-Type: application/json' \
 --data '{
